@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GREEN AI SA PA – TRƯỜNG HỌC XANH</title>
+    <meta name="description" content="Nền tảng giáo dục môi trường và công dân số xanh cho học sinh tiểu học và giáo viên tại Sa Pa" />
+    <meta property="og:title" content="GREEN AI SA PA – TRƯỜNG HỌC XANH" />
+    <meta property="og:description" content="Nền tảng giáo dục môi trường và công dân số xanh cho học sinh tiểu học và giáo viên tại Sa Pa" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function() {
+        // Fix: "TypeError: Cannot set property fetch of #<Window> which has only a getter"
+        // Ensure window.fetch has both a getter and a setter so extension/executor scripts can safely wrap or override it
+        try {
+          var _origFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _origFetch;
+            },
+            set: function(fn) {
+              _origFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          try {
+            if (typeof Window !== 'undefined' && Window.prototype) {
+              var _protoFetch = Window.prototype.fetch;
+              Object.defineProperty(Window.prototype, 'fetch', {
+                get: function() {
+                  return _protoFetch;
+                },
+                set: function(fn) {
+                  _protoFetch = fn;
+                },
+                configurable: true,
+                enumerable: true
+              });
+            }
+          } catch (e2) {}
+        }
+
+        // Intercept and prevent extension-injected errors from breaking the web application
+        window.addEventListener('error', function(event) {
+          if (
+            (event.filename && event.filename.includes('chrome-extension://')) ||
+            (event.message && (
+              event.message.includes('Cannot set property fetch') ||
+              event.message.includes('has only a getter')
+            ))
+          ) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          if (
+            event.reason &&
+            typeof event.reason.message === 'string' &&
+            (
+              event.reason.message.includes('Cannot set property fetch') ||
+              event.reason.message.includes('has only a getter') ||
+              event.reason.message.includes('chrome-extension://')
+            )
+          ) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="font-['Quicksand','Nunito',sans-serif] bg-emerald-50/40 text-slate-800 antialiased selection:bg-emerald-200 selection:text-emerald-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

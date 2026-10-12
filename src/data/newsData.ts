@@ -1,0 +1,48 @@
+import { NewsArticle } from '../types';
+
+export const NEWS_ARTICLES: NewsArticle[] = [
+  {
+    id: 'news-1',
+    title: 'Phát Động Phong Trào "Trường Học Xanh - Không Rác Thải Nhựa" Tại Sa Pa',
+    tag: 'Hoạt động trường',
+    summary: 'Toàn thể giáo viên và học sinh ký cam kết mang bình nước cá nhân và sử dụng túi vải trong năm học mới.',
+    content: 'Sáng nay, tại Trường Tiểu học Sa Pa, lễ phát động phong trào "Trường học xanh - Không rác thải nhựa" đã diễn ra sôi nổi. 100% các lớp đã trang bị góc phân loại rác và thành lập đội Cờ Đỏ Xanh để nhắc nhở các bạn học sinh bỏ rác đúng thùng.',
+    date: 'Hôm nay, 08:30',
+    author: 'Cô Hiệu Trưởng & Liên Đội',
+    icon: '🎒',
+    readMinutes: 2,
+  },
+  {
+    id: 'news-2',
+    title: 'Ngày Hội Đổi Vỏ Hộp Sữa Lấy Cây Xanh: Thu Gom Hơn 1.200 Vỏ Hộp',
+    tag: 'Tái chế học đường',
+    summary: 'Các em học sinh đã gom và làm sạch hơn 1.200 vỏ hộp sữa giấy để gửi đến nhà máy tái chế thành bàn ghế mới.',
+    content: 'Sau 2 tuần phát động, chiến dịch "Thu gom vỏ hộp sữa - Trao gửi mầm xanh" đã nhận được sự hưởng ứng nhiệt tình từ các khối lớp 1, 2, 3, 4, 5. Toàn bộ vỏ hộp sau khi bóc dẹp được xếp gọn vào các thùng các-tông gửi tới đơn vị tái chế chuyên nghiệp.',
+    date: 'Hôm qua, 14:15',
+    author: 'Ban Môi Trường Đội',
+    icon: '🧃',
+    readMinutes: 3,
+  },
+  {
+    id: 'news-3',
+    title: 'Ứng Dụng AI Hỗ Trợ Học Sinh Vùng Cao Học Tập Môi Trường Trực Quan',
+    tag: 'Công nghệ số xanh',
+    summary: 'Dự án GREEN AI SA PA tiên phong đưa công nghệ trí tuệ nhân tạo nhận diện rác và trợ lý học tập thân thiện đến học trò Tây Bắc.',
+    content: 'GREEN AI SA PA là mô hình giáo dục sáng tạo kết hợp giữa tri thức công nghệ số và tình yêu thiên nhiên. Thông qua trợ lý Bé Mầm Xanh, các em học sinh có thể tương tác tự nhiên, nhận diện các loại rác thải thực tế qua camera và ghi lại những hành động xanh mỗi ngày.',
+    date: '01/10/2026',
+    author: 'Nhóm Phát Triển Nền Tảng',
+    icon: '🤖',
+    readMinutes: 3,
+  },
+  {
+    id: 'news-4',
+    title: 'Hành Trình Gìn Giữ Dòng Suối Mường Hoa Trong Lành Của Học Sinh Tiểu Học',
+    tag: 'Bảo vệ nguồn nước',
+    summary: 'Chuyến trải nghiệm thực tế nhặt rác dã ngoại và tìm hiểu đa dạng sinh học tại thung lũng Mường Hoa.',
+    content: 'Đoàn học sinh khối 4 và 5 đã có chuyến đi dã ngoại ý nghĩa dọc bờ suối Mường Hoa. Các em cùng thầy cô nhặt các mảnh túi nilon bị vướng lại trên bụi cây và lắng nghe chuyên gia vườn quốc gia chia sẻ về tầm quan trọng của nguồn nước đầu nguồn.',
+    date: '28/09/2026',
+    author: 'Thầy Tổng Phụ Trách Đội',
+    icon: '💧',
+    readMinutes: 4,
+  },
+];

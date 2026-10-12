@@ -1,0 +1,81 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with role-based access control",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "teacher", "student"] },
+        "displayName": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "username", "role", "displayName", "createdAt"]
+    },
+    "Teacher": {
+      "title": "Teacher",
+      "description": "Teacher profile and assigned classes",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "assignedClasses": { "type": "array" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "email", "displayName", "assignedClasses", "createdAt"]
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Student profile with student code and green points",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "studentCode": { "type": "string" },
+        "nickname": { "type": "string" },
+        "className": { "type": "string" },
+        "grade": { "type": "number" },
+        "greenPoints": { "type": "number" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "studentCode", "nickname", "className", "grade", "greenPoints", "createdAt"]
+    },
+    "GreenAction": {
+      "title": "GreenAction",
+      "description": "Action logged by a student for environmental protection",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentNickname": { "type": "string" },
+        "className": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "points": { "type": "number" },
+        "verified": { "type": "boolean" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "studentId", "title", "category", "points", "verified", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Platform user profiles"
+    },
+    "/teachers/{teacherId}": {
+      "schema": { "$ref": "#/entities/Teacher" },
+      "description": "Teacher profiles and class assignments"
+    },
+    "/students/{studentId}": {
+      "schema": { "$ref": "#/entities/Student" },
+      "description": "Student records identified by Student Code"
+    },
+    "/students/{studentId}/actions/{actionId}": {
+      "schema": { "$ref": "#/entities/GreenAction" },
+      "description": "Private student action diary entries"
+    }
+  }
+}
